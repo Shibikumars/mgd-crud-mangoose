@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Management</title>
+</head>
+<body>
+  {{> header}}
+
+  <h1>Book List</h1>
+  <a href="/add">Add New Book</a>
+  <ul>
+    {{#each books}}
+      <li>
+        {{this.title}} by {{this.author}} - {{this.genre}} ({{this.publishedDate}})
+        <a href="/edit/{{this._id}}">Edit</a> | 
+        <a href="/delete/{{this._id}}">Delete</a>
+      </li>
+    {{/each}}
+  </ul>
+
+  {{> footer}}
+</body>
+</html>
